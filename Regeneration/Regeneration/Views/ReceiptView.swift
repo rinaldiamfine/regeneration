@@ -8,20 +8,17 @@
 import SwiftUI
 
 struct ReceiptView: View {
-    @State var index = 0
-    @State var show = false
     @State var contentReceipt = ["Today", "Month", "All"]
     
     var body: some View {
-        VStack(spacing: 0){
-            NavigationViewCustom(index: self.$index,show: self.$show)
-            ZStack{
-                ReceiptContent(titleName: "Today", show: self.$show).opacity(self.index == 0 ? 1 : 0)
-                ReceiptContent(titleName: "1 Month", show: self.$show).opacity(self.index == 1 ? 1 : 0)
-                ReceiptContent(titleName: "All", show: self.$show).opacity(self.index == 2 ? 1 : 0)
+        NavigationView {
+            Section() {
+                List(0...25, id: \.self) { i in
+                    CellView()
+                }
             }
+            .navigationTitle("Settings")
         }
-        .edgesIgnoringSafeArea(.top)
     }
 }
 

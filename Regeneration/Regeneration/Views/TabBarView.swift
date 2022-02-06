@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TabBarView: View {
     @State var selectedTab = 1
+    @State var showHeader = false
     
     var body: some View {
         TabView(selection: $selectedTab) {

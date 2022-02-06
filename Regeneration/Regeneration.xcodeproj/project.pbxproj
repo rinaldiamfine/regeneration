@@ -16,12 +16,12 @@
 		90740C7127987E8C00C2DA36 /* RegenerationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90740C7027987E8C00C2DA36 /* RegenerationTests.swift */; };
 		90740C7B27987E8C00C2DA36 /* RegenerationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90740C7A27987E8C00C2DA36 /* RegenerationUITests.swift */; };
 		90740C7D27987E8C00C2DA36 /* RegenerationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90740C7C27987E8C00C2DA36 /* RegenerationUITestsLaunchTests.swift */; };
+		908795E427AF726200D7091A /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908795E327AF726200D7091A /* ImagePicker.swift */; };
 		90B54D0C279AD0D0007D1189 /* ReceiptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B54D0B279AD0D0007D1189 /* ReceiptView.swift */; };
 		90B54D0E279AD0D9007D1189 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B54D0D279AD0D9007D1189 /* TabBarView.swift */; };
 		90B54D10279AD0ED007D1189 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B54D0F279AD0ED007D1189 /* SettingView.swift */; };
 		90B54D12279AD0FB007D1189 /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B54D11279AD0FB007D1189 /* SettingModel.swift */; };
 		90B54D14279AD112007D1189 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B54D13279AD112007D1189 /* SettingViewModel.swift */; };
-		90B54D16279AD17B007D1189 /* NavigationViewCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B54D15279AD17B007D1189 /* NavigationViewCustom.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,12 +54,12 @@
 		90740C7627987E8C00C2DA36 /* RegenerationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RegenerationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		90740C7A27987E8C00C2DA36 /* RegenerationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegenerationUITests.swift; sourceTree = "<group>"; };
 		90740C7C27987E8C00C2DA36 /* RegenerationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegenerationUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		908795E327AF726200D7091A /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		90B54D0B279AD0D0007D1189 /* ReceiptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptView.swift; sourceTree = "<group>"; };
 		90B54D0D279AD0D9007D1189 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		90B54D0F279AD0ED007D1189 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		90B54D11279AD0FB007D1189 /* SettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModel.swift; sourceTree = "<group>"; };
 		90B54D13279AD112007D1189 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
-		90B54D15279AD17B007D1189 /* NavigationViewCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewCustom.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +110,7 @@
 		90740C5927987E8A00C2DA36 /* Regeneration */ = {
 			isa = PBXGroup;
 			children = (
+				908795E227AF725100D7091A /* Helpers */,
 				90B54D0A279AD0BD007D1189 /* ViewModels */,
 				90B54D09279AD0B5007D1189 /* Models */,
 				90B54D08279AD0AE007D1189 /* Views */,
@@ -148,13 +149,20 @@
 			path = RegenerationUITests;
 			sourceTree = "<group>";
 		};
+		908795E227AF725100D7091A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				908795E327AF726200D7091A /* ImagePicker.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		90B54D08279AD0AE007D1189 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				90B54D0B279AD0D0007D1189 /* ReceiptView.swift */,
 				90B54D0D279AD0D9007D1189 /* TabBarView.swift */,
 				90B54D0F279AD0ED007D1189 /* SettingView.swift */,
-				90B54D15279AD17B007D1189 /* NavigationViewCustom.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -307,12 +315,12 @@
 			files = (
 				90740C6727987E8C00C2DA36 /* Regeneration.xcdatamodeld in Sources */,
 				90740C6427987E8C00C2DA36 /* Persistence.swift in Sources */,
-				90B54D16279AD17B007D1189 /* NavigationViewCustom.swift in Sources */,
 				90B54D0C279AD0D0007D1189 /* ReceiptView.swift in Sources */,
 				90B54D10279AD0ED007D1189 /* SettingView.swift in Sources */,
 				90740C5D27987E8A00C2DA36 /* ContentView.swift in Sources */,
 				90B54D12279AD0FB007D1189 /* SettingModel.swift in Sources */,
 				90B54D0E279AD0D9007D1189 /* TabBarView.swift in Sources */,
+				908795E427AF726200D7091A /* ImagePicker.swift in Sources */,
 				90B54D14279AD112007D1189 /* SettingViewModel.swift in Sources */,
 				90740C5B27987E8A00C2DA36 /* RegenerationApp.swift in Sources */,
 			);
@@ -478,6 +486,7 @@
 				DEVELOPMENT_TEAM = Q4FVKJHX54;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "The app captures any picture you want to take as the profile picture.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -507,6 +516,7 @@
 				DEVELOPMENT_TEAM = Q4FVKJHX54;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "The app captures any picture you want to take as the profile picture.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
