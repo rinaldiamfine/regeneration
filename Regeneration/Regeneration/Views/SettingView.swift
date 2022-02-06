@@ -21,32 +21,33 @@ struct SettingView: View {
             Form {
                 Section() {
                     HStack {
-                        VStack {
-                            if viewModel.photo == Image("") || viewModel.photo == Image(
-                                uiImage: UIImage(
-                                    data: Data()) ?? UIImage()
-                            ) {
-                                Image(systemName: "person.crop.circle")
-                                    .resizable()
-                                    .frame(width: 70, height: 70)
-                                    .padding(.trailing, 10)
-                                    .onTapGesture {
-                                        presentActionScheet = true
-                                    }
-                            } else {
-                                viewModel.photo?
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                    .frame(width: 70, height: 70)
-                                    .padding(.trailing, 10)
-                                    .clipShape(Circle())
-                                    .overlay(Circle().stroke(Color.accentColor, lineWidth: 2))
-                                    .onTapGesture {
-                                        presentActionScheet = true
-                                    }
-                            }
-                        }
                         if editMode {
+                            VStack {
+                                if viewModel.photo == Image("") || viewModel.photo == Image(
+                                    uiImage: UIImage(
+                                        data: Data()) ?? UIImage()
+                                ) {
+                                    Image(systemName: "person.crop.circle")
+                                        .resizable()
+                                        .frame(width: 70, height: 70)
+                                        .overlay(Circle().stroke(Color.accentColor, lineWidth: 2))
+                                        .padding(.trailing, 10)
+                                        .onTapGesture {
+                                            presentActionScheet = true
+                                        }
+                                } else {
+                                    viewModel.photo?
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                        .frame(width: 70, height: 70)
+                                        .padding(.trailing, 10)
+                                        .clipShape(Circle())
+                                        .overlay(Circle().stroke(Color.accentColor, lineWidth: 2))
+                                        .onTapGesture {
+                                            presentActionScheet = true
+                                        }
+                                }
+                            }
                             VStack(alignment: .leading, spacing: 5) {
                                 TextField("Your name", text: $viewModel.name)
                                     .font(.headline)
@@ -56,6 +57,24 @@ struct SettingView: View {
                                     .font(.caption)
                             }
                         } else {
+                            VStack {
+                                if viewModel.photo == Image("") || viewModel.photo == Image(
+                                    uiImage: UIImage(
+                                        data: Data()) ?? UIImage()
+                                ) {
+                                    Image(systemName: "person.crop.circle")
+                                        .resizable()
+                                        .frame(width: 70, height: 70)
+                                        .padding(.trailing, 10)
+                                } else {
+                                    viewModel.photo?
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                        .frame(width: 70, height: 70)
+                                        .padding(.trailing, 10)
+                                        .clipShape(Circle())
+                                }
+                            }
                             VStack(alignment: .leading, spacing: 6.5) {
                                 Text(viewModel.name).font(.headline)
                                 Text(viewModel.email).font(.caption)
@@ -65,15 +84,29 @@ struct SettingView: View {
                         Spacer()
                     }
                     .padding(.vertical)
-                    
                 } header: {
                     Text("Profile")
                 }
                 
                 Section {
-                    HStack {
-                        RoundedRectangle(cornerRadius: 15)
-                            .frame(width: 125, height: 150)
+                    Toggle("Notif me when ...", isOn: $showNotif)
+                } header: {
+                    Text("Notifications")
+                }
+                
+                Section {
+                    ScrollView(.horizontal) {
+                        HStack{
+                                RoundedRectangle(cornerRadius: 15)
+                                    .frame(width: 125, height: 150)
+                                RoundedRectangle(cornerRadius: 15)
+                                    .frame(width: 125, height: 150)
+                                RoundedRectangle(cornerRadius: 15)
+                                    .frame(width: 125, height: 150)
+                                RoundedRectangle(cornerRadius: 15)
+                                    .frame(width: 125, height: 150)
+                        }
+                        .padding(.vertical, 10)
                     }
                     NavigationLink(destination: SettingContent()) {
                         HStack {
@@ -91,13 +124,7 @@ struct SettingView: View {
                         }
                     }
                 } header: {
-                    Text("Receipt Template")
-                }
-                
-                Section {
-                    Toggle("Notif me when ...", isOn: $showNotif)
-                } header: {
-                    Text("Notifications")
+                    Text("Companies")
                 }
                 
                 HStack {
