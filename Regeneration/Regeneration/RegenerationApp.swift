@@ -13,7 +13,7 @@ struct RegenerationApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabBarView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
