@@ -16,15 +16,21 @@ struct TabBarView: View {
             ReceiptView()
                 .tabItem {
                     Image(systemName: "doc")
-                    Text("Receipt")
+                    Text("Receipts")
                 }
                 .tag(1)
+            CustomerView()
+                .tabItem {
+                    Image(systemName: "person.3")
+                    Text("Customers")
+                }
+                .tag(2)
             SettingView()
                 .tabItem {
                     Image(systemName: "gearshape")
                     Text("Settings")
                 }
-                .tag(2)
+                .tag(3)
         }
     }
 }

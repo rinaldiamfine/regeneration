@@ -14,17 +14,27 @@ import Combine
 class ReceiptViewModel: ObservableObject {
     @Published var name = ""
     @Published var isEmpty = true
+    @Published var titleName = "Add Receipt"
     var receipts: [Receipt] = []
 
     init() {
+        checkReceipt()
+    }
+    
+    func checkReceipt() {
         receipts = ReceiptCoreDataManager.shared.getAll()
         if receipts.count > 0 {
             self.isEmpty = false
-//            self.name = profiles.first?.name! ?? ""
-//            self.email = profiles.first?.email ?? ""
-//            self.phone = profiles.first?.phone ?? ""
-//            self.photoData = profiles.first?.photo ?? Data()
-//            self.photo = Image(uiImage: UIImage(data: (profiles.first?.photo) ?? Data()) ?? UIImage())
+        } else {
+            self.isEmpty = true
         }
+    }
+    
+    func createReceipt() {
+        let receipt = Receipt(context: ReceiptCoreDataManager.shared.persisntentContainer.viewContext)
+        receipt.name = self.name
+        ReceiptCoreDataManager.shared.save()
+        receipts = ReceiptCoreDataManager.shared.getAll()
+        checkReceipt()
     }
 }

@@ -19,7 +19,7 @@ struct SettingView: View {
     var body: some View {
         NavigationView {
             Form {
-                Section() {
+                Section {
                     HStack {
                         if editMode {
                             VStack {
@@ -84,14 +84,20 @@ struct SettingView: View {
                         Spacer()
                     }
                     .padding(.vertical)
-                } header: {
-                    Text("Profile")
                 }
                 
                 Section {
-                    Toggle("Notif me when ...", isOn: $showNotif)
-                } header: {
-                    Text("Notifications")
+//                    Toggle("Notif me when ...", isOn: $showNotif)
+                    NavigationLink(destination: SettingContent()) {
+                        HStack {
+                            Text("Notification")
+                        }
+                    }
+                    NavigationLink(destination: SettingContent()) {
+                        HStack {
+                            Text("Notification")
+                        }
+                    }
                 }
                 
                 Section {
@@ -108,27 +114,8 @@ struct SettingView: View {
                         }
                         .padding(.vertical, 10)
                     }
-                    NavigationLink(destination: SettingContent()) {
-                        HStack {
-                            Text("Available Template")
-                        }
-                    }
-                    NavigationLink(destination: SettingContent()) {
-                        HStack {
-                            Text("Color Brand")
-                        }
-                    }
-                    NavigationLink(destination: SettingContent()) {
-                        HStack {
-                            Text("Papper Size")
-                        }
-                    }
                 } header: {
                     Text("Companies")
-                }
-                
-                HStack {
-                    Text("Copyright @ XXX")
                 }
 
             }

@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct ReceiptModalView: View {
-    @State var viewModel = ReceiptViewModel()
+    @ObservedObject var viewModel: ReceiptViewModel
+    @Binding var isPresented: Bool
     
     func actionCancel() {
-        print("CANCEL")
+        isPresented = false
     }
     func actionDone() {
-        print("DONE")
+        viewModel.createReceipt()
+        isPresented = false
     }
     
     var body: some View {
@@ -35,7 +37,7 @@ struct ReceiptModalView: View {
                 }
             }
             
-            .navigationBarTitle("Edit Product", displayMode: .inline)
+            .navigationBarTitle(viewModel.titleName, displayMode: .inline)
             .navigationBarItems(
                 leading:
                     Button(action: actionCancel, label: {
@@ -50,8 +52,9 @@ struct ReceiptModalView: View {
     }
 }
 
-struct ReceiptModalView_Previews: PreviewProvider {
-    static var previews: some View {
-        ReceiptModalView()
-    }
-}
+//struct ReceiptModalView_Previews: PreviewProvider {
+//    @State var isPresented = true
+//    static var previews: some View {
+//        ReceiptModalView(isPresented: $isPresented)
+//    }
+//}

@@ -8,6 +8,10 @@
 import Foundation
 import CoreData
 
+struct ReceiptModel {
+    let name: String
+}
+
 class ReceiptCoreDataManager {
     let persisntentContainer: NSPersistentContainer
     static let shared = ReceiptCoreDataManager()

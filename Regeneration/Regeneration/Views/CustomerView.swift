@@ -1,13 +1,13 @@
 //
-//  ReceiptView.swift
+//  CustomerView.swift
 //  Regeneration
 //
-//  Created by Rinaldi LNU on 21/01/22.
+//  Created by Rinaldi LNU on 18/02/22.
 //
 
 import SwiftUI
 
-struct ReceiptView: View {
+struct CustomerView: View {
     @ObservedObject var viewModel = ReceiptViewModel()
     @State private var currentFilter = "Today"
     @State var receiptFilters = ["Today", "Month", "All"]
@@ -22,13 +22,6 @@ struct ReceiptView: View {
                     }
                     else {
                         ScrollView {
-                            Picker("Receipt filter", selection: $currentFilter) {
-                                ForEach(receiptFilters, id: \.self) {
-                                    Text($0)
-                                }
-                            }
-                            .pickerStyle(.segmented)
-                            .padding()
                             ForEach(viewModel.receipts, id: \.objectID) { receipt in
                                 ReceiptContentView(receiptModel: receipt)
                                     .padding(.horizontal)
@@ -50,19 +43,20 @@ struct ReceiptView: View {
                 .sheet(isPresented: $isPresented) {
                     ReceiptModalView(viewModel: viewModel, isPresented: $isPresented)
                 }
-                .navigationTitle("Receipts")
+                .navigationTitle("Customers")
             }
         }
     }
 }
 
-struct ReceiptView_Previews: PreviewProvider {
+struct CustomerView_Previews: PreviewProvider {
     static var previews: some View {
-        ReceiptView()
+        CustomerView()
     }
 }
 
-struct ReceiptContentEmptyView: View {
+
+struct CustomerContentEmptyView: View {
     var body: some View {
         VStack(spacing: 10) {
             Spacer()
@@ -95,7 +89,7 @@ struct ReceiptContentEmptyView: View {
     }
 }
 
-struct ReceiptContentView : View {
+struct CustomerContentView : View {
     @State var receiptModel: Receipt
     var body : some View{
         HStack(alignment: .firstTextBaseline) {

@@ -25,6 +25,8 @@
 		90B54D10279AD0ED007D1189 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B54D0F279AD0ED007D1189 /* SettingView.swift */; };
 		90B54D12279AD0FB007D1189 /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B54D11279AD0FB007D1189 /* SettingModel.swift */; };
 		90B54D14279AD112007D1189 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B54D13279AD112007D1189 /* SettingViewModel.swift */; };
+		90BE8CE627BFA84C006E9AE6 /* CustomerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BE8CE527BFA84C006E9AE6 /* CustomerView.swift */; };
+		90BE8CE827BFB0B8006E9AE6 /* CompanyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BE8CE727BFB0B8006E9AE6 /* CompanyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 		90B54D0F279AD0ED007D1189 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		90B54D11279AD0FB007D1189 /* SettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModel.swift; sourceTree = "<group>"; };
 		90B54D13279AD112007D1189 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		90BE8CE527BFA84C006E9AE6 /* CustomerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerView.swift; sourceTree = "<group>"; };
+		90BE8CE727BFB0B8006E9AE6 /* CompanyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +174,8 @@
 				90B54D0D279AD0D9007D1189 /* TabBarView.swift */,
 				90B54D0F279AD0ED007D1189 /* SettingView.swift */,
 				908795E927B083D000D7091A /* ReceiptModalView.swift */,
+				90BE8CE527BFA84C006E9AE6 /* CustomerView.swift */,
+				90BE8CE727BFB0B8006E9AE6 /* CompanyView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -326,9 +332,11 @@
 				90740C6727987E8C00C2DA36 /* Regeneration.xcdatamodeld in Sources */,
 				908795E827AFB65800D7091A /* ReceiptModel.swift in Sources */,
 				90740C6427987E8C00C2DA36 /* Persistence.swift in Sources */,
+				90BE8CE627BFA84C006E9AE6 /* CustomerView.swift in Sources */,
 				90B54D0C279AD0D0007D1189 /* ReceiptView.swift in Sources */,
 				908795EA27B083D000D7091A /* ReceiptModalView.swift in Sources */,
 				90B54D10279AD0ED007D1189 /* SettingView.swift in Sources */,
+				90BE8CE827BFB0B8006E9AE6 /* CompanyView.swift in Sources */,
 				90740C5D27987E8A00C2DA36 /* ContentView.swift in Sources */,
 				90B54D12279AD0FB007D1189 /* SettingModel.swift in Sources */,
 				90B54D0E279AD0D9007D1189 /* TabBarView.swift in Sources */,
